@@ -9,7 +9,7 @@ fi
 cd $SRCDIR
 
 if [ ! -d binutils-${BINUTILSVER} ]; then
-	tar xvjpf $DOWNLOADDIR/binutils-${BINUTILSVER}${BINUTILSREV}.tar.bz2
+	tar xvzpf $DOWNLOADDIR/binutils-${BINUTILSVER}${BINUTILSREV}.tar.gz
 	if [ $? -ne 0 ]; then
 		rm -rf binutils-${BINUTILSVER}
 		exit 1
@@ -18,7 +18,7 @@ if [ ! -d binutils-${BINUTILSVER} ]; then
 fi
 
 if [ ! -d gcc-${GCCVER} ]; then
-	tar xvjpf $DOWNLOADDIR/gcc-${GCCVER}${GCCREV}.tar.bz2
+	tar xvzpf $DOWNLOADDIR/gcc-${GCCVER}${GCCREV}.tar.gz
 	if [ $? -ne 0 ]; then
 		rm -rf gcc-${GCCVER}
 		exit 1
@@ -46,7 +46,7 @@ fi
 
 if [ -n "${MPFRVER}" ]; then
 	if [ ! -d mpfr-${MPFRVER} ]; then
-		tar xvjpf $DOWNLOADDIR/mpfr-${MPFRVER}${MPFRREV}.tar.bz2
+		tar xvzpf $DOWNLOADDIR/mpfr-${MPFRVER}${MPFRREV}.tar.gz
 		if [ $? -ne 0 ]; then
 			rm -rf mpfr-${MPFRVER}
 			exit 1
@@ -57,7 +57,7 @@ fi
 
 if [ -n "${GMPVER}" ]; then
 	if [ ! -d gmp-${GMPVER} ]; then
-		tar xvjpf $DOWNLOADDIR/gmp-${GMPVER}${GMPREV}.tar.bz2
+		tar xvJpf $DOWNLOADDIR/gmp-${GMPVER}${GMPREV}.tar.xz
 		if [ $? -ne 0 ]; then
 			rm -rf gmp-${GMPVER}
 			exit 1
